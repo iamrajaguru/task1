@@ -100,7 +100,7 @@ class Box extends Component {
           <div className="inner_container">
             <div
               className={
-                this.state.count.includes(2) ? "customSelection" : "customBlock"
+                this.state.count.includes(9) ? "customSelection" : "customBlock"
               }
               onClick={() => this.toggle(9)}
             >
