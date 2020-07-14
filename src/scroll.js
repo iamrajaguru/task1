@@ -4,23 +4,33 @@ class Scroll extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { scroll: 0 };
+    this.state = { scroll: [] };
   }
 
-  onScroll = (e) => {
-    console.log(e, "event");
+  onScrollCalled = (e) => {
+    let temp = this.state.scroll;
+    temp.push(1);
+    this.setState({ scroll: temp });
   };
-  componentDidMount() {
-    window.addEventListener("scroll", function () {
-      document.getElementById("showScroll").innerHTML =
-        window.pageYOffset + "px";
-    });
-    console.log("object", window);
-  }
+
   render() {
     return (
-      <div className="scrollScreen" id="showScroll">
-        HelloWorld
+      <div
+        className="scrollScreen"
+        id="rootContainer"
+        onScroll={this.onScrollCalled}
+      >
+        <div className="screen1">
+          <h1> helloworld</h1>
+        </div>
+        <div className="screen1">
+          <h1> helloworld</h1>
+        </div>
+        {this.state.scroll.map((i, index) => (
+          <div key={index} className="screen1">
+            <h1>helloworld</h1>
+          </div>
+        ))}
       </div>
     );
   }

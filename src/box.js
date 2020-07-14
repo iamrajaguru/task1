@@ -179,8 +179,8 @@ class Box extends Component {
               16
             </div>
           </div>
+          <Link to="/Scroll"> Next Task</Link>
         </div>
-        <Link to="/Scroll"> Click</Link>
       </div>
     );
   }
